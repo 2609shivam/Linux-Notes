@@ -23,3 +23,7 @@ Hidden files in Linux start with a `.` (dot). To list them, use:
 ```sh
 ls -a
 ```
+To access a specific hidden file, use:
+```sh
+cat .hiddenfilename
+```
