@@ -16,3 +16,10 @@ OR
 ```sh
 cat file\ name\ with\ spaces
 ```
+## Accessing Hidden Files in Linux
+
+Hidden files in Linux start with a `.` (dot). To list them, use:
+
+```sh
+ls -a
+```
