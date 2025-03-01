@@ -10,5 +10,9 @@ cat ./-
 To read a file with spaces in its name, use:
 
 ```sh
-cat "file name with spaces"
-
+cat "file name with spaces" 
+```
+OR
+```sh
+cat file\ name\ with\ spaces
+```
