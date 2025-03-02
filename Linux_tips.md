@@ -29,7 +29,6 @@ cat .hiddenfilename
 ```
 ## Finding and Accessing Human-Readable Files in Linux
 
-### **Scenario: Bandit Level 1 → Level 2**
 The goal was to find the only human-readable file in the `inhere` directory.
 
 ### **Steps to Solve:**
@@ -44,4 +43,20 @@ The goal was to find the only human-readable file in the `inhere` directory.
 3. **Read the contents of `-file07'**
    ```sh
    cat ./-file07
+   ```
+## Finding a Specific File Based on Criteria
+
+The goal was to find a file under the `inhere` directory with:
+✔ Human-readable text  
+✔ 1033 bytes in size  
+✔ Not executable  
+
+### **Steps to Solve:**
+1. **Find the file matching the given properties**
+   ```sh
+   find -type f -size 1033c ! -executable
+   ```
+2. **Read the file to get the password**
+   ```sh
+   cat ./maybehere-07/.file2
    ```
