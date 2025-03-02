@@ -46,7 +46,7 @@ The goal was to find the only human-readable file in the `inhere` directory.
    ```
 ## Finding a Specific File Based on Criteria
 
-The goal was to find a file under the `inhere` directory with:
+The goal was to find a file under the `inhere` directory with:  
 ✔ Human-readable text  
 ✔ 1033 bytes in size  
 ✔ Not executable  
