@@ -60,3 +60,14 @@ The goal was to find a file under the `inhere` directory with:
    ```sh
    cat ./maybehere-07/.file2
    ```
+## Finding a File Based on User, Group, and Size
+
+The goal was to find a file somewhere on the server that meets the following conditions:  
+✔ Owned by **user** `bandit7`  
+✔ Owned by **group** `bandit6`  
+✔ Exactly **33 bytes** in size  
+
+**Use the `find` command to locate the file:**
+   ```sh
+   find / -type f -user bandit7 -group bandit6 -size 33c 2>/dev/null
+   ```
