@@ -27,3 +27,21 @@ To access a specific hidden file, use:
 ```sh
 cat .hiddenfilename
 ```
+## Finding and Accessing Human-Readable Files in Linux
+
+### **Scenario: Bandit Level 1 → Level 2**
+The goal was to find the only human-readable file in the `inhere` directory.
+
+### **Steps to Solve:**
+1. **List all files, including hidden ones:**  
+   ```sh
+   ls -a
+   ```
+2. **Identify human-readable files:**
+   ```sh
+   file ./*
+   ```
+3. **Read the contents of `-file07'**
+   ```sh
+   cat ./-file07
+   ```
