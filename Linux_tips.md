@@ -71,3 +71,9 @@ The goal was to find a file somewhere on the server that meets the following con
    ```sh
    find / -type f -user bandit7 -group bandit6 -size 33c 2>/dev/null
    ```
+## Finding a word next to a specific word  in a .txt file
+
+**Use the `grep` command to locate the word next to `millionth`:**
+```sh
+grep millionth data.txt
+```
