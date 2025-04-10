@@ -77,3 +77,14 @@ The goal was to find a file somewhere on the server that meets the following con
 ```sh
 grep millionth data.txt
 ```
+## Finding the only non repeated line in a .txt file
+
+### **Steps to Solve**
+1. **Sort the file so duplicate lines are grouped together**
+   ```sh
+   sort data.txt
+   ```
+2. **Use `uniq -u` to find unique lines**
+   ```sh
+   sort data.txt | uniq -u
+   ```
