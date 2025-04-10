@@ -79,7 +79,7 @@ grep millionth data.txt
 ```
 ## Finding the only non repeated line in a .txt file
 
-### **Steps to Solve**
+### **Steps to Solve:**
 1. **Sort the file so duplicate lines are grouped together**
    ```sh
    sort data.txt
@@ -87,4 +87,19 @@ grep millionth data.txt
 2. **Use `uniq -u` to find unique lines**
    ```sh
    sort data.txt | uniq -u
+   ```
+## Extracting Human-Readable strings from a File in Linux
+The password for the next level is stored in the file data.txt in one of the few human-readable strings, preceded by several ‘=’ characters.
+### **Steps to Solve:**
+1. **Identify the file type**
+   ```sh
+   file data.txt
+   ```
+2. **Extract human-readable strings**
+   ```sh
+   strings data.txt
+   ```
+3. **Filter only the strings with `=` characters**
+   ```sh
+   strings data.txt | grep '====='
    ```
