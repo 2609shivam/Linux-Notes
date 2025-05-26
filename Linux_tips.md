@@ -103,3 +103,8 @@ The password for the next level is stored in the file data.txt in one of the few
    ```sh
    strings data.txt | grep '====='
    ```
+## Decoding Base64-Encoded Files in Linux
+The password is stored in a data.txt file.
+```sh
+base64 -d data.txt
+```
