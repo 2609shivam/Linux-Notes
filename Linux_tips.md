@@ -116,3 +116,42 @@ cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
 - `tr` stands for translate
 - First half `A-M` becomes `N-Z`
 - Second half `N-Z` becomes `A-M`
+## Reconstructing and Decompressing a Hexdumped File
+The password is stored in a data.txt file.
+### **Steps to Solve:**
+1. **Create a safe workspace in `/tmp`:**
+   ```sh
+   mkdir $(mktemp -d bandit12XXXX)
+   ```
+2. **Copy and move the data file:**
+   ```sh
+   cp ~/data.txt .
+   mv data.txt data.hexdump
+   ```
+3. **Use `xxd` to reverse the hexdump into binary:**
+   ```sh
+   xxd -r data.hexdump data.bin
+   ```
+4. **Inspect the file type:**
+   ```sh
+   file data.bin
+   ```
+5. **Unpack each layer accordingly:**
+   ```sh
+   mv data.bin data.gz
+   gunzip data.gz
+
+   file data  # Example: might now say it's a bzip2 file
+   mv data data.bz2
+   bunzip2 data.bz2
+
+   file data  # Maybe a gzip again?
+   mv data data.gz
+   gunzip data.gz
+
+   file data  # Maybe a tar archive?
+   mv data data.tar
+   tar -xf data.tar
+
+   # Keep checking 'file' and unpacking until you get a regular ASCII text file
+   ```
