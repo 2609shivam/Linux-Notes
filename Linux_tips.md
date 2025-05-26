@@ -108,3 +108,11 @@ The password is stored in a data.txt file.
 ```sh
 base64 -d data.txt
 ```
+## Decoding ROT13 Cipher in Linux
+The password is stored in a data.txt file.
+```sh
+cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+```
+- `tr` stands for translate
+- First half `A-M` becomes `N-Z`
+- Second half `N-Z` becomes `A-M`
