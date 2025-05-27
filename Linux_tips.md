@@ -155,3 +155,27 @@ The password is stored in a data.txt file.
 
    # Keep checking 'file' and unpacking until you get a regular ASCII text file
    ```
+## SSH Key Authentication and Accessing Protected System Files
+The password is stored `/etc/bandit_pass/bandit14` and can only be read by user `bandit14`.
+### **Steps to Solve:**
+1. **Copy the private key to a writable temporary directory:**
+   ```sh
+   mkdir /tmp/mykeydir
+   cp sshkey.private /tmp/mykeydir/
+   ```
+2. **Set proper permissions on the key:**
+   ```sh
+   chmod 600 /tmp/mykeydir/sshkey.private
+   ```
+3. **SSH into `bandit14` using the private key:**
+   ```sh
+   ssh -i /tmp/mykeydir/ssh.private bandit14@localhost -p 2220
+   ```
+   This tells SSh:
+   - `-i sshkey.private`: use the private key.
+   - `bandit14@localhost`: login as `bandit14` on the same machine.
+   - `-p 2220`: connect to the custom port used by Bandit.
+4. **Read the password from the system path:**
+   ```sh
+   cat /etc/bandit_pass/bandit14
+   ```
