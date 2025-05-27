@@ -179,3 +179,9 @@ The password is stored `/etc/bandit_pass/bandit14` and can only be read by user 
    ```sh
    cat /etc/bandit_pass/bandit14
    ```
+## Submit Password via TCP Port
+The password can be retrieved by submitting the password of the current level to port `3000` on `localhost`.
+```sh
+telnet localhost 30000
+```
+Enter the password of the current level.
