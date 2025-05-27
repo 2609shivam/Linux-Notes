@@ -185,3 +185,9 @@ The password can be retrieved by submitting the password of the current level to
 telnet localhost 30000
 ```
 Enter the password of the current level.
+## Submit Password over SSL
+The password can be retrieved by submitting the current level's password to port `30001` on `localhost` using **SSL/TLS** encryption.
+```sh
+openssl s_client -connect localhost:30001
+```
+Enter the password of the current level.
