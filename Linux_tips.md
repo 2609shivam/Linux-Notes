@@ -191,3 +191,31 @@ The password can be retrieved by submitting the current level's password to port
 openssl s_client -connect localhost:30001
 ```
 Enter the password of the current level.
+## Finding a port with a server listening in a given range
+The credentials for the next level can be retrieved by submitting the password of the current level to a port on localhost in the range 31000 to 32000.
+### **Steps to Solve**
+1. **Scan for open ports in the range:**
+   ```sh
+   nmap -sV -T4 -31000-32000 localhost
+   ```
+2. **Connect to the correct port:**
+   ```sh
+   openssl s_client -connect localhost:31790 -ign_eof
+   ```
+## Using a private RSA key
+Login into the next level using a private RSA key
+### **Steps to solve**
+1. **Store the key in a tmp file:**
+   ```sh
+   mkdir /tmp/lev17
+   cd /tmp/lev17
+   nano private.key
+   ```
+2. **Change permission on the file to keep it private:**
+   ```sh
+   chmod 700 private.key
+   ```
+3. **Log in to the next level:**
+   ```sh
+   ssh bandit17@localhost -i private.key -p 2220
+   ```
