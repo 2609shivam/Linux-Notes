@@ -219,3 +219,8 @@ Login into the next level using a private RSA key
    ```sh
    ssh bandit17@localhost -i private.key -p 2220
    ```
+## Finding Line change between two files
+```sh
+diff passwords.old passwords.new
+```
+Line starting with `>` is the password.
