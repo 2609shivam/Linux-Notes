@@ -236,3 +236,14 @@ The password for this level can be accessed only by the permission of the owner 
 ./bandit20-do cat /etc/bandit_pass/bandit20
 ```
 **bandit20-do** executes cat as **bandit20**.
+## Socket Setuid Privilege Escalation
+### **Steps to Solve**
+1. **Start a listener:**
+   ```bash
+   nc -lvp 31337
+   ```
+2. **In a second SSH session:**
+   ```bash
+   ./suconnect 31337
+   ```
+3. **Send Bandit20's password in the listener**.
