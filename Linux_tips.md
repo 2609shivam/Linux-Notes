@@ -224,3 +224,8 @@ Login into the next level using a private RSA key
 diff passwords.old passwords.new
 ```
 Line starting with `>` is the password.
+## Reading a file without logging in
+The **.bashrc** file has been modified which logs you out when you log in with ssh. Password is in a file named **readme**.
+```sh
+ssh bandit18@bandit.labs.overthewire.org -p 2220 cat readme
+```
