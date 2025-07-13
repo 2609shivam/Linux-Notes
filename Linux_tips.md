@@ -229,3 +229,10 @@ The **.bashrc** file has been modified which logs you out when you log in with s
 ```sh
 ssh bandit18@bandit.labs.overthewire.org -p 2220 cat readme
 ```
+## Using setuid binary
+The password for this level can be accessed only by the permission of the owner of the file: **bandit20**.
+```sh
+./bandit20-do
+./bandit20-do cat /etc/bandit_pass/bandit20
+```
+**bandit20-do** executes cat as **bandit20**.
