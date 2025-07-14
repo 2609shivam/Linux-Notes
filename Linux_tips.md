@@ -247,3 +247,31 @@ The password for this level can be accessed only by the permission of the owner 
    ./suconnect 31337
    ```
 3. **Send Bandit20's password in the listener**.
+## Retrieve the password for a cronjob
+The cronjob is running automatically on the system.
+### **Steps to Solve**
+1. **Check for cron jobs:**
+   ```bash
+   ls -l /etc/cron.d
+   ```
+2. **Identify relevant cron job:**
+   ```bash
+   cat /etc/cron.d/cronjob_bandit22
+   ```
+3. **Inspect the executed script:**
+   ```bash
+   cat /usr/bin/cronjob_bandit22.sh
+   ```
+4. **Retrieve the password:**
+   ```bash
+   cat /tmp/bandit22_password
+   ```
+## Cron Job Hash-Based Filename Retrieval
+The cron job for Bandit23 copies the password file to `/tmp/` using a **dynamic, hash-based filename**.
+```bash
+echo I am user bandit23 | md5sum | cut -d ' ' -f 1
+```
+Retrieve the password
+```bash
+cat /tmp/output_from_previous_command
+```
