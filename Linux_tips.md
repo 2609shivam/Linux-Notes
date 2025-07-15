@@ -313,6 +313,7 @@ The lab wants you to enter the password with a four digit pin.
    ```
 3. **Executing the script:**
    ```sh
+   chmod +x script.sh
    ./script.sh
    ```
 4. **Brute Forcing:**
