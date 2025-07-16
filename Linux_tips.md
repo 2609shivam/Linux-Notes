@@ -398,3 +398,18 @@ The password in the REAME.md file of this repo needs to be accessed by using log
    ```sh
    cat README.md
    ```
+## Switching between Git Branch
+To retrieve the password you need to switch to a different git branch of the repo.
+## **Steps to Solve**
+1. **Finding hidden branches:**
+   ```sh
+   git branch -a
+   ```
+2. **Switching to a different branch:**
+   ```sh
+   git checkout dev
+   ```
+3. **Retrieving the password:**
+   ```sh
+   cat REAMDE.md
+   ```
