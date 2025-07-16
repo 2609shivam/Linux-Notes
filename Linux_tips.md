@@ -436,3 +436,13 @@ To retrieve the password we need to push a file key.txt .
    git commit -m "Add key.txt"
    GIT_SSH_COMMAND="ssh -p 2220" git push origin master
    ```
+## Escaing UPPERCASE SHELL
+### **Steps to Solve**
+1. **Use the command:**
+   ```sh
+   $0
+   ```
+2. **You will enter a new shell with $, retrieve the password:**
+   ```sh
+   cat /etc/bandit_pass/bandit33
+   ```
