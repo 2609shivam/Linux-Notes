@@ -422,3 +422,17 @@ Then
 ```sh
 git show [tag_name]
 ```
+## Pushing a file to a Remote Repo using Git
+To retrieve the password we need to push a file key.txt .
+### **Steps to Solve**
+1. **Creating the file key.txt**.
+2. **Removing .gitignore which stops the file:**
+   ```sh
+   rm .gitignore
+   ```
+3. **Pushing the file:**
+   ```sh
+   git add key.txt
+   git commit -m "Add key.txt"
+   GIT_SSH_COMMAND="ssh -p 2220" git push origin master
+   ```
