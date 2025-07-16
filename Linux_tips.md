@@ -413,3 +413,12 @@ To retrieve the password you need to switch to a different git branch of the rep
    ```sh
    cat REAMDE.md
    ```
+## Using Git Tags
+To retrieve the password we need to use a git tag. Once you enter repo.
+```sh
+git tag
+```
+Then 
+```sh
+git show [tag_name]
+```
