@@ -360,3 +360,22 @@ The lab wants you to enter the password with a four digit pin.
    ```sh
    ./bandit27-do cat /etc/bandit_pass/bandit27
    ```
+## Cloining a Repo
+To retrieve the password the a repo has to be cloned.
+### **Steps to Solve**
+1. **Create a temporary SSH config in /tmp to force port 2220:**
+   ```sh
+   echo 'Host localhost
+      Port 2220
+   ' > /tmp/ssh_config
+   ```
+2. **Clone using the SSH config:**
+   ```sh
+   GIT_SSH_COMMAND="ssh -F /tmp/ssh_config" git clone ssh://bandit27-git@localhost/home/bandit27-git/repo
+   ```
+3. **Enter bandit27's password.**
+4. **Read the password:**
+   ```sh
+   ls
+   cat README
+   ```
