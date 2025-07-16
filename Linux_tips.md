@@ -379,3 +379,22 @@ To retrieve the password the a repo has to be cloned.
    ls
    cat README
    ```
+## Using Git Log and checkout
+The password in the REAME.md file of this repo needs to be accessed by using logs as the password has been removed by commits.
+### **Steps to Solve**
+1. **Move into the repo:**
+   ```sh
+   cd repo
+   ```
+2. **Check the git logs:**
+   ```sh
+   git log
+   ```
+3. **Use commits to find the password:**
+   ```sh
+   git checkout (commit in the log)
+   ```
+4. **Read the file:**
+   ```sh
+   cat README.md
+   ```
