@@ -114,7 +114,7 @@ data.txt | xxd -r -p
 ```
 ## Reversing a string
 ```sh
-echo "=="cCtmMml1ViV3b"" | rev
+echo "==QcCtmMml1ViV3b"" | rev
 ```
 ## Decoding ROT13 Cipher in Linux
 The password is stored in a data.txt file.
