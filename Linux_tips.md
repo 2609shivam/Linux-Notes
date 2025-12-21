@@ -454,3 +454,9 @@ To retrieve the password we need to push a file key.txt .
    ```sh
    cat /etc/bandit_pass/bandit33
    ```
+## Command Injection to force grep command to display every line
+```sh
+grep .* /etc/natas_webpass/natas11 dictionary.txt
+```
+`.*` forces grep to read every line of both the files <br>
+Refer: OverTheWire-Writeups/natas10.md
