@@ -108,6 +108,14 @@ The password is stored in a data.txt file.
 ```sh
 base64 -d data.txt
 ```
+## Decoding a Hex Encoded File
+```sh
+data.txt | xxd -r -p
+```
+## Reversing a string
+```sh
+echo "=="cCtmMml1ViV3b"" | rev
+```
 ## Decoding ROT13 Cipher in Linux
 The password is stored in a data.txt file.
 ```sh
