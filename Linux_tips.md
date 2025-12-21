@@ -436,7 +436,7 @@ To retrieve the password we need to push a file key.txt .
    git commit -m "Add key.txt"
    GIT_SSH_COMMAND="ssh -p 2220" git push origin master
    ```
-## Escaing UPPERCASE SHELL
+## Escaping UPPERCASE SHELL
 ### **Steps to Solve**
 1. **Use the command:**
    ```sh
